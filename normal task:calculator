@@ -1,0 +1,44 @@
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "Undefined (division by zero)"
+    return x / y
+
+while True:
+    # Taking operation as input
+    operation = input("Choose operation (add, subtract, multiply, divide or exit): ")
+
+    if operation == 'exit':
+        print("Exiting calculator. Goodbye!")
+        break
+
+    if operation in ('add', 'subtract', 'multiply', 'divide'):
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+
+            if operation == 'add':
+                print(f"Result: {add(num1, num2)}")
+
+            elif operation == 'subtract':
+                print(f"Result: {subtract(num1, num2)}")
+
+            elif operation == 'multiply':
+                print(f"Result: {multiply(num1, num2)}")
+
+            elif operation == 'divide':
+                print(f"Result: {divide(num1, num2)}")
+
+        except ValueError:
+            print("Please enter a valid number!")
+
+    else:
+        print("Invalid operation. Please choose a valid operation.")
